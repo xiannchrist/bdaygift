@@ -1,0 +1,182 @@
+body {
+    background: mistyrose;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe Script', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .greeting {
+    text-align: center;
+    color: deeppink;
+    margin-bottom: 30px;
+    animation: fadeInCake 2s ease-in-out forwards;
+    z-index: 2;
+  }
+  
+  .greeting h1 {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  
+  .greeting h2 {
+    font-size: 2rem;
+    margin-top: 10px;
+    color: crimson;
+  }
+  
+  .greeting p {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-top: 10px;
+  }
+  
+  .cake {
+    position: relative;
+    width: 220px;
+    height: 240px;
+    opacity: 0;
+    margin-top: 50px;
+    animation: fadeInCake 2s ease-in-out forwards;
+    z-index: 2;
+  }
+  
+  @keyframes fadeInCake {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  .layer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    border: 3px solid #b94d4d;
+  }
+  
+  .layer1 {
+    top: 0;
+    width: 100px;
+    height: 40px;
+    background-color: #ffe5ec;
+    box-shadow: 0 0 10px #ffb6c1 inset;
+  }
+  
+  .layer2 {
+    top: 50px;
+    width: 140px;
+    height: 50px;
+    background-color: #f4a3a3;
+    box-shadow: 0 0 15px #f08080 inset;
+  }
+  
+  .layer3 {
+    top: 110px;
+    width: 180px;
+    height: 60px;
+    background-color: #d36c6c;
+    box-shadow: 0 0 20px #c94c4c inset;
+  }
+  
+  .candle {
+    position: absolute;
+    top: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 35px;
+    background: linear-gradient(to bottom, #ccccff, #6666ff);
+    border-radius: 3px;
+    box-shadow: 0 0 3px #444;
+  }
+  
+  .flame {
+    position: absolute;
+    top: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 30px;
+    background: radial-gradient(circle at 50% 50%, gold, orange, red);
+    border-radius: 50% 50% 40% 40%;
+    animation: realisticFlame 0.3s infinite alternate;
+  }
+  
+  @keyframes realisticFlame {
+    0% { transform: translateX(-50%) scaleY(1); opacity: 0.9; }
+    50% { transform: translateX(-50%) scaleY(1.2); opacity: 1; }
+    100% { transform: translateX(-50%) scaleY(1.1); opacity: 0.8; }
+  }
+  
+  .balloons {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 3;
+  }
+  
+  .balloon {
+    width: 30px;
+    height: 40px;
+    background: hotpink;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    position: relative;
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .balloon::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: black;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .petals {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .petal {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle at 30% 30%, #e75480, #c71585);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    opacity: 0.7;
+    animation: fall linear infinite;
+  }
+  
+  @keyframes fall {
+    0% {
+      transform: translateY(-10%) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(110vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  

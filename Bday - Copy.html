@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Romantic Birthday Cake</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="greeting">
+    <h1>HAPPY BIRTHDAY PRINCESS ASHLEY 🎉👑</h1>    
+    <p>Wishing you a day filled with love, laughter, and all your favorite things.<br>Hope this year brings you nothing but happiness!</p>
+  </div>
+
+  <div class="cake">
+    <div class="flame"></div>
+    <div class="candle"></div>
+    <div class="layer layer1"></div>
+    <div class="layer layer2"></div>
+    <div class="layer layer3"></div>
+  </div>
+
+  <div class="balloons">
+    <div class="balloon" style="background: lightcoral;"></div>
+    <div class="balloon" style="background: palevioletred;"></div>
+    <div class="balloon" style="background: deeppink;"></div>
+  </div>
+
+  <div class="petals" id="petals"></div>
+
+  <script>
+    const petalContainer = document.getElementById('petals');
+
+    function createPetal() {
+      const petal = document.createElement('span');
+      petal.classList.add('petal');
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDuration = (4 + Math.random() * 3) + 's';
+      petal.style.opacity = Math.random() + 0.3;
+      petal.style.transform = `rotate(${Math.random() * 360}deg)`;
+      petalContainer.appendChild(petal);
+
+      setTimeout(() => {
+        petal.remove();
+      }, 8000);
+    }
+
+    setInterval(createPetal, 300);
+  </script>
+</body>
+</html>
